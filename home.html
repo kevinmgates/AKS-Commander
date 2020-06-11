@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head runat="server">
+        <script type="text/javascript" src="javascript.js"></script>
+        <link rel="stylesheet" href="stylesheet.css"/>
+        <title>AKS Commander</title>
+    </head>
+    <body>
+        --name<br/>
+        --resource-group<br/><br/>
+        <input type="checkbox" id="aad" name="aad" value="aad" onclick="showOptions(this)"><label>Azure AD</label><br/>
+        <!-- TODO: add description, link to docs https://docs.microsoft.com/en-us/cli/azure/aks?view=azure-cli-latest#az-aks-create-->
+        <div id="aad-div" class="hide indent">
+            <input type="checkbox" id="aad-client-app-id">[--aad-client-app-id]<input type="text" id="aad-client-app-id-value" class="subOptions" placeholder="value"></input><br/>
+            <input type="checkbox" id="aad-server-app-id">[--aad-server-app-id]<input type="text" id="aad-server-app-id-value" class="subOptions" placeholder="value"></input><br/>
+            <input type="checkbox">[--aad-server-app-secret]<input type="text" id="aad-server-app-secret-value" class="subOptions" placeholder="value"></input><br/>
+            <input type="checkbox">[--aad-tenant-id]<input type="text" id="aad-tenant-id-value" class="subOptions" placeholder="value"></input><br/>
+            <br/>
+        </div>
+
+        <br/>
+        [--admin-username]
+        [--api-server-authorized-ip-ranges]
+        [--attach-acr]
+        [--client-secret]
+        [--disable-rbac]
+        [--dns-name-prefix]
+        [--dns-service-ip]
+        [--docker-bridge-address]
+        [--enable-addons]
+        [--enable-cluster-autoscaler]
+        [--enable-managed-identity]
+        [--enable-node-public-ip]
+        [--enable-private-cluster]
+        [--enable-rbac]
+        [--generate-ssh-keys]
+        [--kubernetes-version]
+        [--load-balancer-idle-timeout]
+        [--load-balancer-managed-outbound-ip-count]
+        [--load-balancer-outbound-ip-prefixes]
+        [--load-balancer-outbound-ips]
+        [--load-balancer-outbound-ports]
+        [--load-balancer-sku]
+        [--location]
+        [--max-count]
+        [--max-pods]
+        [--min-count]
+        [--network-plugin {azure, kubenet}]
+        [--network-policy]
+        [--no-ssh-key]
+        [--no-wait]
+        [--node-count]
+        [--node-osdisk-size]
+        [--node-vm-size]
+        [--nodepool-labels]
+        [--nodepool-name]
+        [--nodepool-tags]
+        [--outbound-type {loadBalancer, userDefinedRouting}]
+        [--pod-cidr]
+        [--service-cidr]
+        [--service-principal]
+        [--skip-subnet-role-assignment]
+        [--ssh-key-value]
+        [--subscription]
+        [--tags]
+        [--uptime-sla]
+        [--vm-set-type]
+        [--vnet-subnet-id]
+        [--windows-admin-password]
+        [--windows-admin-username]
+        [--workspace-resource-id]
+        [--zones {1, 2, 3}]
+    </body>
+</html>
