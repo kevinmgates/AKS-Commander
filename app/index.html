@@ -8,7 +8,7 @@
         <title>AKS Commander</title>
     </head>
     <body>
-        <div class="siteName highlight">AKS Commander <span class="siteOwner">&nbsp;&nbsp;by Kevin M. Gates</span></div>
+        <div class="siteName highlight">AKS Commander <span class="siteOwner">by Kevin M. Gates</span></div>
         <hr>
         <div class="siteDesc">Quickly generate Azure CLI commands to create an Azure Kubernetes Service cluster.</div>
 
@@ -45,7 +45,31 @@
             <div class="aksCommandsContainer">
                 <textarea id="aksCommands" class="aksCommands" placeholder="az aks create --name  --resource-group" rows="5" readonly></textarea><br>
             </div>
+            <div class="tooltip">
+                <button onclick="myFunction()" onmouseout="outFunc()">
+                  <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+                  Copy results
+                  </button>
+                </div>
         </div>
+        
+                        
+            <script>
+            function myFunction() {
+              var copyText = document.getElementById("aksCommands");
+              copyText.select();
+              copyText.setSelectionRange(0, 99999);
+              document.execCommand("copy");
+              
+              var tooltip = document.getElementById("myTooltip");
+              tooltip.innerHTML = "Copied!";
+            }
+            
+            function outFunc() {
+              var tooltip = document.getElementById("myTooltip");
+              tooltip.innerHTML = "Copy to clipboard";
+            }
+            </script>
         <script>
             setInterval(() => {
                 buildCommands()
