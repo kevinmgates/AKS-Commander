@@ -11,10 +11,23 @@ body{
     margin-bottom: 5px;
 }
 .siteDesc{
-    opacity: .4;
-    font-size: 14pt;
+    opacity: .3;
+    font-size: 12pt;
     margin-top:5px;
     margin-bottom: 20px;
+}
+.siteOwner
+{
+    opacity: .3;
+    font-size: 12pt;
+    margin-top:5px;
+    margin-bottom: 20px; 
+    color: aliceblue;
+}
+hr{
+    opacity: .2;
+    margin-top:5px;
+    margin-bottom: 12px;
 }
 .hide{
     display: none;
@@ -25,7 +38,7 @@ body{
 .optionName{
     font-size: 13pt;
     cursor: pointer;
-    margin-top:10px;
+    margin-top:15px;
 }
 .subOptionsContainer{
     margin-left: 0px;
@@ -73,7 +86,7 @@ textarea{
     color: #6699cc;
 }
 .aksCommandsContainer{
-    margin-top:15px;
+    margin-top:10px;
 }
 ul {
     position: relative;
@@ -89,5 +102,15 @@ ul li:before {
     opacity: .75;
 }
 .aksCommands{
-    width:500px;background: #151515;color: aliceblue;border:1px solid rgba(240, 248, 255, 0.536);font-size: 10pt;
+    width:99%;background: #151515;color: aliceblue;border:1px solid rgba(240, 248, 255, 0.536);font-size: 10pt;
+}
+.steps{
+    font-size:16pt;
+    margin-bottom: 15px;
+    margin-top: 30px;
+    color: #6699cc;
+}
+.indentSteps
+{
+    margin-left:25px;
 }
