@@ -9,14 +9,15 @@
     </head>
     <body>
         <div class="siteName">AKS Commander</div>
+        <div class="siteDesc">Quickly generate the Azure CLI commands to create an Azure Kubernetes Service cluster.</div>
         <ul>
-            <li class="optionName">Required</li>
+            <li class="optionName highlight">Required</li>
             <div class='subOptionsContainer'>
                 <div class="subSection">
-                    <span class="subOptionName">--name</span> - <span class="subDesc">Name of the managed cluster.</span><br><input type="text" id="clusterName-value" class="requiredValue" placeholder=" e.g., Cluster name"><br>
+                    <span class="subOptionName">--name</span> - <span class="subDesc">Name of the managed cluster.</span><br><input type="text" id="clusterName-value" class="requiredValue" placeholder="e.g., Cluster name"><br>
                 </div> 
                 <div class="subSection">  
-                    <span class="subOptionName">--resource-group</span> - <span class="subDesc">Name of the resource group.</span><br><input type="text" id="resourceGroup-value" class="requiredValue" placeholder=" e.g., Resource group name">
+                    <span class="subOptionName">--resource-group</span> - <span class="subDesc">Name of the existing resource group.</span><br><input type="text" id="resourceGroup-value" class="requiredValue" placeholder="e.g., Resource group name">
                 </div> 
             </div>
             
@@ -34,7 +35,7 @@
         </ul> 
 
         <div class="aksCommandsContainer">
-            <textarea id="aksCommands" class="aksCommands" placeholder=" az aks create" rows="5"></textarea><br>
+            <textarea id="aksCommands" class="aksCommands" placeholder="az aks create --name  --resource-group" rows="5" readonly></textarea><br>
         </div>
 
         <script>

@@ -101,7 +101,7 @@ function buildCommands(){
             }    
         }
     }
-    document.getElementById("aksCommands").innerText = " az aks create --name " + document.getElementById("clusterName-value").value + " --resource-group " + document.getElementById("resourceGroup-value").value + " " + buildCommand;
+    document.getElementById("aksCommands").innerText = "az aks create --name " + document.getElementById("clusterName-value").value + " --resource-group " + document.getElementById("resourceGroup-value").value + " " + buildCommand;
 }
 
 function loadOptions(){
@@ -130,11 +130,11 @@ function populateOptions(optionsList, targetDiv){
                 HTML += "<input type='text' id='" + i_option[0] + "-value' class='subValue hide' value='disabled'></div>";
             } else {
                 //set placeholder value
-                HTML += "<input type='text' id='" + i_option[0] + "-value' class='subValue hide' placeholder=' e.g., " + i_option[2] + "'></div>";
+                HTML += "<input type='text' id='" + i_option[0] + "-value' class='subValue hide' placeholder='e.g., " + i_option[2] + "'></div>";
             }
         } else {
             //hiding textboxes by default for a cleaner look
-            HTML += "<input type='text' id='" + i_option[0] + "-value' class='subValue hide' placeholder=' Value'></div>";
+            HTML += "<input type='text' id='" + i_option[0] + "-value' class='subValue hide' placeholder='Value'></div>";
         }
     }
     document.getElementById(targetDiv).innerHTML = "<div class='subOptionsContainer'>" + HTML + "</div>";

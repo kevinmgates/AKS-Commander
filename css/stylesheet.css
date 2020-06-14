@@ -8,6 +8,12 @@ body{
 .siteName{
     font-size: 28pt;
     margin-top:20px;
+    margin-bottom: 5px;
+}
+.siteDesc{
+    opacity: .4;
+    font-size: 14pt;
+    margin-top:5px;
     margin-bottom: 20px;
 }
 .hide{
@@ -32,7 +38,7 @@ body{
 }
 .subDesc{
     margin-top: 5px;
-    opacity: .5;
+    opacity: .4;
 }
 .subValue
 {
@@ -54,6 +60,10 @@ body{
 }
 input{
     background: #151515;border:1px solid aliceblue;color: aliceblue;
+    padding-inline-start: 5px;
+}
+textarea{
+    padding-inline-start: 5px; 
 }
 .subOptionName{
     margin-left: 5px;
@@ -79,5 +89,5 @@ ul li:before {
     opacity: .75;
 }
 .aksCommands{
-    width:500px;background: #151515;color: aliceblue;border:1px solid aliceblue;font-size: 10pt;
+    width:500px;background: #151515;color: aliceblue;border:1px solid rgba(240, 248, 255, 0.536);font-size: 10pt;
 }
