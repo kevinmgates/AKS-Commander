@@ -13,17 +13,18 @@
         <div class="siteDesc">Quickly generate Azure CLI commands to create an Azure Kubernetes Service cluster.</div>
 
 
-        <div class="steps">1. Configure Required Settings</div>
+        <div class="steps">1. Required settings</div>
         <div class="indentSteps">
             <div class="subSection">
-                <span class="">--name</span> - <span class="subDesc">Name of the managed cluster.</span><br><input type="text" id="clusterName-value" class="requiredValue" placeholder="e.g., Cluster name"><br>
-            </div> 
+                <span class="subOptionName">--name</span> - <span class="subDesc">Name of the managed cluster.</span><br><input type="text" id="clusterName-value" class="requiredValue" placeholder="e.g., Cluster name"><br>
+            </div>
+            <div style="margin-top:15px;"></div>
             <div class="subSection">  
-                <span class="">--resource-group</span> - <span class="subDesc">Name of the existing resource group.</span><br><input type="text" id="resourceGroup-value" class="requiredValue" placeholder="e.g., Resource group name">
+                <span class="subOptionName">--resource-group</span> - <span class="subDesc">Name of the existing resource group.</span><br><input type="text" id="resourceGroup-value" class="requiredValue" placeholder="e.g., Resource group name">
             </div> 
         </div>
 
-        <div class="steps">2. Configure Options</div>
+        <div class="steps">2. Configure options</div>
         <div class="indentSteps">
             <ul>
                 <li id="nodesOptionName" onclick="toggleOptionName('nodes-div')" class="optionName">Nodes</li>
@@ -40,37 +41,33 @@
             </ul>
         </div>
 
-        <div class="steps">3. Copy Results</div>
+        <div class="steps">3. Validate & copy results</div>
         <div class="indentSteps">
             <div class="aksCommandsContainer">
-                <textarea id="aksCommands" class="aksCommands" placeholder="az aks create --name  --resource-group" rows="5" readonly></textarea><br>
+                <textarea id="aksCommands" class="aksCommands" placeholder="az aks create --name  --resource-group" rows="7" readonly></textarea><br>
             </div>
             <div class="tooltip">
                 <button onclick="myFunction()" onmouseout="outFunc()">
                   <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
-                  Copy results
-                  </button>
-                </div>
+                  Copy
+                </button>
+            </div>
         </div>
-        
-                        
-            <script>
+                   
+        <script>
             function myFunction() {
-              var copyText = document.getElementById("aksCommands");
-              copyText.select();
-              copyText.setSelectionRange(0, 99999);
-              document.execCommand("copy");
-              
-              var tooltip = document.getElementById("myTooltip");
-              tooltip.innerHTML = "Copied!";
+                var copyText = document.getElementById("aksCommands");
+                copyText.select();
+                copyText.setSelectionRange(0, 99999);
+                document.execCommand("copy");
+                var tooltip = document.getElementById("myTooltip");
+                tooltip.innerHTML = "Copied!";
             }
             
             function outFunc() {
-              var tooltip = document.getElementById("myTooltip");
-              tooltip.innerHTML = "Copy to clipboard";
+                var tooltip = document.getElementById("myTooltip");
+                tooltip.innerHTML = "Copy to clipboard";
             }
-            </script>
-        <script>
             setInterval(() => {
                 buildCommands()
             }, 1000);

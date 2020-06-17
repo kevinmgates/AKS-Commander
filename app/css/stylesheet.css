@@ -6,7 +6,7 @@ body{
     -webkit-font-smoothing: antialiased;
 }
 .siteName{
-    font-size: 28pt;
+    font-size: 24pt;
     margin-top:20px;
     margin-bottom: 5px;
 }
@@ -14,7 +14,7 @@ body{
     opacity: .3;
     font-size: 12pt;
     margin-top:5px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 .siteOwner
 {
@@ -36,7 +36,7 @@ hr{
     display: inline;
 }
 .optionName{
-    font-size: 13pt;
+    font-size: 15pt;
     cursor: pointer;
     margin-top:15px;
 }
@@ -80,7 +80,7 @@ textarea{
 }
 .subOptionName{
     margin-left: 5px;
-    
+    font-size:14pt;
 }
 .highlight{
     color: #6699cc;
@@ -104,14 +104,14 @@ ul li:before {
 .aksCommands{
     width:99%;
     background: #151515;
-    color: aliceblue;
+    color: darkgray;
     border:1px solid rgba(240, 248, 255, 0.536);
     font-size: 10pt;
 }
 .steps{
     font-size:16pt;
     margin-bottom: 15px;
-    margin-top: 20px;
+    margin-top: 30px;
     color: #6699cc;
 }
 .indentSteps
