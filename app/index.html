@@ -20,7 +20,11 @@
             </div>
             <div style="margin-top:15px;"></div>
             <div class="subSection">  
-                <span class="subOptionName">--resource-group</span> - <span class="subDesc">Name of the existing resource group.</span><br><input type="text" id="resourceGroup-value" class="requiredValue" placeholder="e.g., Resource group name">
+                <span class="subOptionName">--resource-group</span> - <span class="subDesc" id="rgDesc"></span><br><input type="text" id="resourceGroup-value" class="requiredValue" placeholder="e.g., Resource group name">&nbsp;&nbsp;&nbsp;<input type='checkbox' id='createRG' onclick='createNewRG()'><span class="delight">&nbsp;Create a new resource group</span>
+            </div>
+            <div class="subSection hide" id="rgLocation">
+                <div style="margin-top:15px;"></div>
+                <span class="subOptionName">--location</span> - <span class="subDesc">New resource group location.</span><br><input type="text" id="resourceGroupLocation-value" class="requiredValue" placeholder="e.g., eastus, westus">
             </div> 
         </div>
 
@@ -41,7 +45,7 @@
             </ul>
         </div>
 
-        <div class="steps">3. Validate & copy results</div>
+        <div class="steps">3. Validate & copy</div>
         <div class="indentSteps">
             <div class="aksCommandsContainer">
                 <textarea id="aksCommands" class="aksCommands" placeholder="az aks create --name  --resource-group" rows="7" readonly></textarea><br>

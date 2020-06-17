@@ -156,5 +156,8 @@ ul li:before {
     opacity: 1;
   }
   button{
-    width:88px;background: #151515;color: aliceblue;border:1px solid aliceblue;height:25px;
+    width:88px;background: #151515;color: darkgray;border:1px solid darkgray;height:25px;
+  }
+  .delight{
+      color: darkgray;
   }

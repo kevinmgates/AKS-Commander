@@ -91,17 +91,24 @@ function hideOptions(source){
 
 function buildCommands(){
     var buildCommand = "";
+    var createRGCommand = "";
     var x = document.getElementsByTagName("input");
     var i;
     for (i = 0; i < x.length; i++) {
-        if (x[i].checked == true){
+        if (x[i].checked == true && x[i].id != "createRG"){
             buildCommand += "--" + x[i].id + " ";
             if(document.getElementById(x[i].id + "-value").value != "disabled"){
                 buildCommand += document.getElementById(x[i].id + "-value").value + " ";
             }    
         }
     }
-    document.getElementById("aksCommands").innerText = "az aks create --name " + document.getElementById("clusterName-value").value + " --resource-group " + document.getElementById("resourceGroup-value").value + " " + buildCommand;
+    if (document.getElementById("createRG").checked == true){
+        createRGCommand = "# create the new resource group\naz group create -l " + document.getElementById("resourceGroupLocation-value").value + " -n " + document.getElementById("resourceGroup-value").value + "\n\n# create the AKS cluster\n";
+    } else {
+        createRGCommand = "";
+    }
+
+    document.getElementById("aksCommands").innerText = createRGCommand + "az aks create --name " + document.getElementById("clusterName-value").value + " --resource-group " + document.getElementById("resourceGroup-value").value + " " + buildCommand;
 }
 
 function loadOptions(){
@@ -109,6 +116,8 @@ function loadOptions(){
     populateOptions(clusterOptions, "cluster-div");
     populateOptions(azureADOptions, "aad-div");
     populateOptions(networkingOptions, "networking-div");
+
+    document.getElementById("rgDesc").innerHTML = "Name of the existing resource group.";
 }
 
 function populateOptions(optionsList, targetDiv){
@@ -149,5 +158,17 @@ function toggleSubOptions(source){
     else{
         //hide the value textbox
         document.getElementById(source.id + "-value").className = document.getElementById(source.id + "-value").className.replace("show", "hide");
+    } 
+}
+function createNewRG(){
+    if (document.getElementById("createRG").checked == true){
+        //show the value textbox
+        document.getElementById("rgLocation").className = document.getElementById("rgLocation").className.replace("hide", "show");
+        document.getElementById("rgDesc").innerHTML = "Name of the new resource group.";
+    }
+    else{
+        //hide the value textbox
+        document.getElementById("rgLocation").className = document.getElementById("rgLocation").className.replace("show", "hide");
+        document.getElementById("rgDesc").innerHTML = "Name of the existing resource group.";
     } 
 }
